@@ -1,0 +1,12 @@
+<div class="category-container">
+    <div id="SongList"></div>
+</div>
+
+<div class="list-load-begunok u-hidden"><i class="fa fa-music"></i></div>
+
+<script>
+    $(function(){        
+        MusicApplication.renderSongList('<?= $this->filterBy ?>', '<?= $this->criteria ?>');  
+        MusicApplication.page = 'songlist';
+    });    
+</script>

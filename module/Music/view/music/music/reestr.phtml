@@ -1,0 +1,25 @@
+<div class="category-container">
+<?php foreach($reestr as $item): ?>
+ <?php if($target == 'Albums') {
+        $value = $item['album'];
+        $filterBy = 'byAlbum';
+    }
+    ?>
+
+    <?php if($target == 'Songers') {
+        $value = $item['songer'];
+        $filterBy = 'bySonger';    }
+     ?>
+<div class="category-item" onclick="MusicApplication.getSongListLayout('<?= $filterBy ?>', '<?= $value ?>')">    
+    <a><?= $this->escapeHtml($value); ?></a>
+</div>
+<?php endforeach; ?>
+</div>
+
+<script>
+    $(function(){                
+        MusicApplication.page = 'reestr';
+    });    
+</script>
+
+

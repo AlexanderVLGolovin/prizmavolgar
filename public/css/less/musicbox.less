@@ -1,0 +1,549 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02.12.2018, 22:50:38
+    Author     : Developer
+*/
+
+
+/*variables*/
+@width: 900px;
+@headerHeight: 210px;
+@playerHeight: 250px;
+@reestrItemWidth: 296px;
+@casetteBlockHeight: 205px;
+@controlsBlockHeight: 30px;
+@indicatorHeight: 105px;
+@displayHeight: 100px;
+
+
+.music-module {
+
+    .ellipsis-one-line {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-inline-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        width: calc(100%);
+    }
+    
+    .disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .u-right {
+        float: right;     
+    }
+
+    .u-hidden {
+        display: none;
+        visibility: hidden;
+    }
+
+    .u-pointer {
+        cursor: pointer;
+    }
+
+    .u-nowrap {
+        white-space: nowrap;
+    }
+
+    .u-floatRight {
+        float: right;
+    }
+
+
+    .search-bottom-area {
+        position: relative;
+        left: 0;
+        right: 0;            
+
+        .search-textbox-area {
+            width: 400px;
+            position: relative;
+            display: inline-block;
+            top: -21px;
+            left: 54px;
+
+            #SearchTextBox {
+                width: 400px !important;
+            }
+        }
+
+        .mode-swicher {
+            position: relative;            
+            display: inline-block;
+            line-height: 1em;
+            list-style: none;
+            padding: 2px;                
+            margin-left: 10px;   
+            top: -32px;
+
+            li {        
+                cursor: pointer;
+                display: inline-block;
+
+                span {
+                    padding: .5em;
+                    background-color: #FFc100;
+                    border-radius: 4px;
+                    margin: 0 1px 1px 0;
+                    border: 1px solid lightgray;
+
+                    &:active {
+                        margin: 1px 0 0 1px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    div.main-page {
+        width: 100%
+    }
+
+
+    div.content {
+        width: @width;	
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 2em;
+    }
+
+    div.header {
+        display: block;
+        height: @headerHeight;
+        background-image: url(/img/music/searchpanel.jpg);
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: @width @headerHeight;     
+        margin-bottom: 5px;
+        margin-top: 10px;
+
+        div.search-block {       
+            display: table;        
+            width: 100%;       
+            color: floralwhite;  
+            font-weight: 600;
+            font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;    
+            text-shadow: 2px 3px 2px black, 0 0 2px black;
+            font-size: 1.25rem; 
+            div.row {
+                display: table-row;              
+
+                div.cell {
+
+                    .dx-widget {
+                        color: floralwhite;  
+                        font-weight: 600;
+                        font-size: 1.3rem;
+                        text-shadow: 2px 3px 2px black, 0 0 2px black;
+                    }
+
+                    display: table-cell;
+                    padding: 0 1em;
+
+                    &.search-letters {
+                        text-align: center;
+                        font-size: 1.25rem;
+
+                        span {
+                            padding: 0 .25em;
+                            cursor: pointer;
+                            color: floralwhite;
+                        }
+                    }
+                }
+            }
+
+            /*        .dx-texteditor-input {
+                        font-size: 1.25rem;
+                        
+                    }*/
+        }
+    }
+
+    .category-container{
+        display: block;
+        margin: .5em 0;
+
+        .category-item {
+            display: inline-block;
+            width: @reestrItemWidth;
+            min-height: ~"calc(2em - 4px)";
+            margin: .5em 0;
+            vertical-align: top;        
+
+            a {
+                background-color: #027fb8;
+                color: #c8e5bc;
+                font-size: 1.25rem;
+                padding: 1em;        
+                cursor: pointer;                
+                display: block;            
+                position: relative;
+                width: ~"calc(100%-1em)";
+                margin: 0 1px 1px 0;
+
+                &:active{
+                    margin: 1px 0 0 1px;
+                }
+            }
+        }
+    }
+
+    footer {
+        font-family: Arial;
+        text-align: right;
+        padding: .5em 1em;
+        color: gray;
+        font-size: .75em;
+        border-top: 1px solid gray;
+        line-height: 1em;
+    }
+
+    /*Player style*/
+    div.player-area{
+        display: block;
+        width: 100%;
+        height: auto;
+        div#player {
+            display: table;
+            width: @width;
+            height: @playerHeight;
+            border: 1px gray solid;
+            background-color: #e2e2e2;
+            background-image: url(/img/music/tape-background.jpg);    
+            background-repeat: no-repeat;
+
+            div#leftBlock {
+                display: table-cell;
+                width: 40%;
+
+                div#casetteBlock{                
+                    height: @casetteBlockHeight;
+                    border: 2px outset #d2d2d2;
+                    width: 100%;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    margin-bottom: 5px;
+                    width: ~"calc(100% - 20px)";
+                    background-image: url(/img/music/cassete.png);
+                    background-position-x: center;
+                    background-position-y: 2px;
+                    background-repeat: no-repeat;
+                    background-color: #bfbfbf;
+
+                    div.cassete-rotor {
+                        position: relative;
+                        height: 38px;
+                        width: 38px;                    
+
+                        &.left {
+                            top: 73px;
+                            left: 85px;
+                        }
+
+                        &.right {
+                            top: 73px;
+                            left: -85px;
+                        }
+                    }
+
+                    .cover {
+                        position: relative;                    
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+
+                        .cover-glass {
+                            height: 156px;
+                            background-color: lightcyan;
+                            opacity: .5;
+                        }
+
+                        .cover-bottom {
+                            background-image: url(/img/music/tape-background.jpg);
+                            height: 38px;
+                            padding: .5em 0 0 .5em;
+                            border-top: 2px outset #d2d2d2;
+
+                            span.label {
+                                font-weight: 900; 
+                                color: #8c8c8c;
+                                span.family {
+                                    font-size: .75em;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                div#controlsBlock{
+                    display: table;            
+                    height: @controlsBlockHeight;
+                    width: ~"calc(100% - 20px)";            
+                    margin-left: 10px;
+                    margin-top: 5px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+
+                    div.control-button {
+                        display: table-cell;   
+                        text-align: center;
+                        cursor: pointer;
+                        vertical-align: middle;
+                        border-width: 1px;             
+                        border-style: outset;
+                        border-color: gray;                    
+                        width: auto;
+                        background: linear-gradient(to bottom, #f2f2f2, #b2b2b2);
+
+                        .fa {
+                            margin: 0 1px 1px 0;      
+                        }                    
+
+                        &:active {
+                            border-style: inset;
+                            .fa {
+                                margin: 1px 0 0 1px;
+                            }
+                        }             
+                    }
+                }        
+            }
+
+            div#rightBlock {
+                display: table-cell;
+                width: 60%;
+                padding: 10px;
+                vertical-align: top;
+
+                div.top-row {                
+                    width: 100%;
+                    display: block;                
+
+                    div.indicator-area {
+                        display: block;                                        
+                        vertical-align: top;
+                        float: right;                    
+
+                        div.indicator-block{
+                            width: 100%;
+                            display: block;                        
+
+                            div.indicator {
+                                display: inline-block;                            
+                                height: @indicatorHeight;     
+                                vertical-align: top;
+                                background-color: #fff;
+                                border: 2px outset #d2d2d2;
+                                border-radius: 8px;                            
+                                overflow: hidden;
+                                padding-top: 10px;
+                                background-image: url(/img/music/indicator.jpg);
+                                background-repeat: no-repeat;
+                                background-position-x: center;                            
+                                background-position-y: -24px; 
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+
+                div.bottom-row {
+                    height: 130px;
+                    width: 100%;
+                    display: table;                
+
+                    div.display-area {
+                        display: table-cell;                    
+                        width: 180px;                    
+                        padding: 10px;
+
+                        div.display {                        
+                            background-color: #081623;
+                            border: 2px outset #081623;
+                            border-radius: 4px;
+                            font-family: 'dotf';
+                            color: #26e9ce;                    
+                            font-size: .9em;
+                            padding: .5em .25em;
+                            overflow: hidden;
+                            height: @displayHeight;   
+
+                            div.counter-area {
+                                font-size: .9em;
+
+                                span.mode-disp {
+                                    color: greenyellow;    
+                                }
+
+                                span.timer-disp {
+                                    float: right;
+                                }
+                            }
+
+                            div.song-area {
+                                font-size: .6em;
+                                line-height: 1.5em;                              
+                                display: table;
+
+                                .row {
+                                    display: table-row;
+
+                                    .cell {
+                                        display: table-cell;                                    
+
+                                        &:first-child {
+                                            color: greenyellow;
+                                        }
+
+                                        &:last-child {
+                                            width: 100%
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    div.volumeArea {
+                        display: table-cell;
+                        width: 2em;
+                        padding-top: 10px;
+                        text-align: center;
+
+                        .fa {
+                            width: 100%;
+                            margin: 0 1px 1px 0;
+
+                            &:active {
+                                margin: 1px 0 0 1px;
+                            }
+                        }
+
+                        .repeat-playlist {
+                            &.active {                            
+                                color: green;
+                            }
+                        }
+                    }       
+
+                    div.playListArea {                   
+                        display: table-cell;
+                        width: ~"calc(100% - 2em - 180px)";        
+                        padding-top: 10px;
+                        vertical-align: top;
+                        .play-list-control {                        
+                            background-color: #081623;
+                            border: 2px outset #081623;
+                            border-radius: 4px;                        
+
+                            .dx-list-item {
+                                border-top: none;                        
+
+                                &.dx-state-hover {
+                                    background-color: #005951;
+                                }
+
+                                &.dx-list-item-selected {
+                                    background-color: #005951;
+
+                                    .dx-list-item-content {
+                                        color: greenyellow;
+                                    }
+                                }
+                            }
+
+                            .dx-list-item-content, .dx-list .dx-empty-message {
+                                padding: 2px 4px;
+                                font-size: .65em;
+                                line-height: 1.25;
+                                font-family: 'dotf';
+                                color: #26e9ce; 
+                                display: flex;
+                                flex-direction: row; 
+
+                                .song-title {
+                                    flex-grow: 1;
+                                    overflow: hidden;
+                                }
+
+                                .fa {
+                                    font-size: 1.25em;
+                                }
+                            }
+                        }                   
+                    }     
+                }
+            }    
+        }
+    }
+
+    div.non-stop-title {
+        text-align: center;
+
+        div.main-message {
+            color: #027fb8;
+            font-size: 1.5em; 
+        }
+
+        div.foot-message {
+            color: darkorange;
+            font-size: 1.25em;                
+        }
+    }
+
+    div.category-check {
+        display: inline; 
+
+        div.dx-checkbox {        
+            margin: 15px 10px;
+
+            .dx-checkbox-text {
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    div.start-area {
+        text-align: center;
+        margin: 10px;
+
+        .start-button {
+            color: #8a551e;
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2em;
+            line-height: 95px;
+            cursor: pointer;
+            background: radial-gradient(#f0f0f0 0%, #fbc726 80%,#f0f0f0 90%);
+
+            &:active {
+                background: radial-gradient(#f0f0f0 0%, #fbc726 60%,#f0f0f0 90%);
+            }
+        }
+    }
+
+    div.list-load-begunok {
+        position: absolute;    
+        opacity: .5;    
+    }
+
+    .dx-datagrid .fa:active {
+        color: green;    
+    }
+}

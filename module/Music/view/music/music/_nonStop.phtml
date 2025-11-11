@@ -1,0 +1,7 @@
+<div class="category-container">
+<?php foreach($groups as $group): ?>
+    <div class="category-item" onclick="MusicApplication.getSongListLayout( 'byCategory', '<?= $group->getId() ?>')">
+    <a><?= $this->escapeHtml($group->getName()); ?></a>
+</div>
+<?php endforeach; ?>
+</div>

@@ -1,0 +1,196 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">       
+
+        <?=
+                $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendName('google-site-verification', 'HJIstSwme_NFLoaKgHcDiyGz0PDyOftGCEYcbn4pRoo')
+                ->appendName('yandex-verification', 'b0e874673cb7452c')
+                ->appendName('format-detection', 'telephone=no')                
+                ->appendName('author', 'Aleksandr Golovin')
+        ?>
+
+        <!-- Le styles -->
+        <?=
+                $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . 'favicon.ico'])
+                ->prependStylesheet($this->basePath('css/main.css'))
+                ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+                ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+                ->prependStylesheet($this->basePath('css/fonts.css'))
+                ->prependStylesheet($this->basePath('css/prizma.css'))
+                ->prependStylesheet($this->basePath('css/font-awesome.css'))
+                ->appendStylesheet($this->basePath('css/style.css'))
+                ->appendStylesheet($this->basePath('css/vertical-xc.min.css'))
+                ->appendStylesheet($this->basePath('css/responsive.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?=
+                $this->headScript()
+                ->prependFile($this->basePath('js/bootstrap.min.js'))
+                ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+                ->appendFile($this->basePath('js/jquery.flexslider.min.js'))
+                ->appendFile($this->basePath('js/main.js'))
+                ->appendFile($this->basePath('js/isotope.pkgd.min.js'))
+                ->appendFile($this->basePath('js/owl.carousel.min.js'))
+                ->appendFile($this->basePath('js/jquery.parallax-1.1.3.js'))
+                ->appendFile($this->basePath('js/appear.min.js'))
+                ->appendFile($this->basePath('js/jquery.validate.min.js'))
+                ->appendFile($this->basePath('js/jquery.fancybox.pack.js'))
+        ?>   
+
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-185905508-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-185905508-1');
+</script>
+
+    </head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+                    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(70637608, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/70637608" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <!--Preloader
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+        Preloader Утв-->
+
+        <!-- Navigation -->
+        <nav class="navbar mega-menu navbar-fixed-top nav-height" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#section-fs-header"><img src="/img/logoB&W.png" alt=""></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <!-- No Dropdown Mega-Menu Full Width -->
+                        <li class="_dropdown">
+                            <a href="/" class="dropdown-toggle">ГЛАВНАЯ</a>                            
+                        </li><!--/.nodropdown-->                                               
+                                  
+                        
+                        <!-- Dropdown Mega-Menu 2 Col -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">УСЛУГИ И ЦЕНЫ</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <!-- Content Container -->
+                                    <div class="mega-menu-content">
+                                        <div class="row">
+                                            <ul class="col-sm-12 list-unstyled">                               
+                                                <li class="navbar-item"><a href="/#photo-pricing">ФОТОУСЛУГИ</a></li>
+                                                <li class="navbar-item"><a href="/#poligraph-pricing">ПОЛИГРАФИЧЕСКИЕ УСЛУГИ</a></li>
+                                                <li class="navbar-item"><a href="/#digital-pricing">ЦИФРОВЫЕ УСЛУГИ</a></li>
+                                                <li class="navbar-item"><a href="/#site-pricing">ПРОЧИЕ УСЛУГИ</a></li>                                                
+                                                <li class="navbar-item"><a href="/Digivideo">ОЦИФРОВКА ВИДЕО</a></li>                                                
+                                            </ul>
+
+                                        </div><!--/.row-->
+                                    </div><!--/.mega-menu-content-->
+                                </li>
+                            </ul><!--/.dropdown-menu-->
+                        </li><!--/.dropdown-->
+                        <!-- Dropdown Mega-Menu 2 Col End --> 
+
+
+                        <!-- Dropdown Search -->
+                        <li class="dropdown no-caret" style="display: none;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i>ПОИСК</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-search">
+                                        <form role="search">               
+                                            <div class="input-group">
+                                                <input type="search" id="search" class="form-control"  placeholder="Искать..">
+                                                <span class="input-group-btn">
+                                                    <button type="submit" class="btn btn-default" value="Search"><i class="fa fa-search"></i></button>
+                                                </span>
+                                            </div>      
+                                        </form>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li> <!-- /.dropdown -->
+                        <!-- Whole Dropdown Menu End -->
+                        
+                        <!-- No Dropdown Mega-Menu Full Width -->
+                        <li class="_dropdown">
+                            <a href="/#contacts" class="dropdown-toggle">КОНТАКТЫ</a>                            
+                        </li><!--/.nodropdown-->                        
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <!-- navbar-end -->
+
+<?= $this->content ?>                                        
+        <footer>
+    <section id="footer">
+        <div class="container">  
+            <div class="row">
+                <!-- CopyRight Text -->
+                <div class="col-md-6 col-sm-6">
+                    <div class="copy-footer"><!--Инфа о разработчике--></div>
+                </div>
+                <div class="col-md-6 col-sm-6" style="display: none;"> 
+                    <div class="social text-center">
+                        <ul> 
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>  
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul> 
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+</footer>
+<?= $this->inlineScript() ?>
+    </body>
+</html>

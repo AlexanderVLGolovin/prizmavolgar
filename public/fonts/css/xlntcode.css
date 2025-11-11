@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'xlntcode';
+	src:url('/fonts/xlntcode.eot?-qeb72');
+	src:url('/fonts/xlntcode.eot?#iefix-qeb72') format('embedded-opentype'),
+		url('/fonts/xlntcode.ttf?-qeb72') format('truetype'),
+		url('/fonts/xlntcode.woff?-qeb72') format('woff'),
+		url('/fonts/xlntcode.svg?-qeb72#xlntcode') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.xc {
+	font-family: 'xlntcode';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-users:before {
+	content: "\e612";
+}
+.icon-heart-xc:before {
+	content: "\e613";
+}
+.icon-key-xc:before {
+	content: "\e610";
+}
+.icon-user-female:before {
+	content: "\e614";
+}
+.icon-user-male:before {
+	content: "\e611";
+}
+.icon-rocket:before {
+	content: "\e60f";
+}
+.icon-line-04:before {
+	content: "\e60e";
+}
+.icon-line-03:before {
+	content: "\e60d";
+}
+.icon-line-02:before {
+	content: "\e607";
+}
+.icon-cloud-download:before {
+	content: "\e60c";
+}
+.icon-minus:before {
+	content: "\e605";
+}
+.icon-plus:before {
+	content: "\e604";
+}
+.icon-quote-right:before {
+	content: "\e60b";
+}
+.icon-quote-left:before {
+	content: "\e60a";
+}
+.icon-right-angle:before {
+	content: "\e600";
+}
+.icon-left-angle:before {
+	content: "\e601";
+}
+.icon-down-angle:before {
+	content: "\e602";
+}
+.icon-up-angle:before {
+	content: "\e603";
+}
+.icon-cross:before {
+	content: "\e606";
+}
+.icon-apple:before {
+	content: "\e608";
+}
+.icon-android:before {
+	content: "\e609";
+}

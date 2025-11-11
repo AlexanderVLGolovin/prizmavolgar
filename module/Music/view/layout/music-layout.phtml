@@ -1,0 +1,160 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>                                
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <?= $this->headTitle('MP3 Collection')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?=
+                $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?=
+                $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/music/favicon.ico'])
+                ->prependStylesheet($this->basePath('css/fonts.css'))
+                ->prependStylesheet($this->basePath('css/musicbox.css'))
+                ->prependStylesheet($this->basePath('css/style.css'))
+                ->prependStylesheet($this->basePath('css/dx.light.css'))
+                ->prependStylesheet($this->basePath('css/dx.common.css'))
+                ->prependStylesheet($this->basePath('css/font-awesome.css'))
+//                ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+//                ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?=
+                $this->headScript()
+                ->prependFile($this->basePath('js/music/music-module-1.03.js'))
+                ->prependFile($this->basePath('js/music/play-module-1.01.js'))
+                ->prependFile($this->basePath('js/music/nonstop-module.js'))
+                ->prependFile($this->basePath('js/dx.all.js'))
+                ->prependFile($this->basePath('js/polyfills.js'))
+                ->prependFile($this->basePath('js/bootstrap.min.js'))
+                ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+    </head>
+    <body>
+        <div class="main-page music-module">
+            <div class="content">
+
+                <div class="player-area" class="_u-hidden">
+                    <div id="player" class="_u-hidden">
+                        <div id="leftBlock">                            
+                            <div id="casetteBlock">                                                                
+                                <div class="cassete-rotor left"><img src="/img/music/cassete_rotor.png" /></div>
+                                <div class="cassete-rotor right"><img src="/img/music/cassete_rotor.png" /></div>      
+                                <div class="cover">
+                                    <div class="cover-glass"></div>
+                                    <div class="cover-bottom">
+                                        <span class="label">SANYO <span class="family">golovinyo</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="controlsBlock">
+                                <div class="control-button disabled fast-backward" title="Prior Song"><i class="fa fa-fast-backward"></i></div>                                
+                                <div class="control-button disabled stop" title="Stop"><i class="fa fa-stop"></i></div>
+                                <div class="control-button disabled pause" title="Pause"><i class="fa fa-pause"></i></div>  
+                                <div class="control-button disabled play" title="Play"><i class="fa fa-play"></i></div>
+                                <div class="control-button disabled fast-forward" title="Next Song"><i class="fa fa-fast-forward"></i></div>                                                                                            
+                            </div>                    
+                        </div>                
+                        <div id="rightBlock">
+                            <div class="top-row">                                
+                                <div class="indicator-area">
+                                    <div class="indicator-block">
+                                        <div class="indicator"><div id="leftIndicator"></div></div>
+                                        <div class="indicator"><div id="rightIndicator"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-row">                                
+                                <div class="display-area">
+                                    <div class="display">
+                                        <div class="counter-area"><span class="mode-disp">STOP</span><span class="timer-disp"></span></div>
+                                        <div class="song-area">
+                                            <div class="row">
+                                                <div class="cell">SONG: </div>
+                                                <div class="cell"><span class="song"></span></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">SINGER: </div>
+                                                <div class="cell"><span class="songer"></span></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="cell">ALBUM: </div>
+                                                <div class="cell"><span class="album"></span></div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>                                
+                                <div class="playListArea">
+                                    <div id="playList"></div>
+                                </div>
+                                <div class="volumeArea">
+                                    <div class="play-playlist"><i class="fa fa-play u-pointer" title="Play Playlist"></i></div>
+                                    <div class="clear-playlist"><i class="fa fa-trash-o u-pointer" title="Clear Playlist"></i></div>
+                                    <div class="repeat-playlist"><i class="fa fa-retweet u-pointer" title="Repeat Playlist"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header">
+                    <div class="search-block">
+                        <div class="row select-search-type">
+                            <div class="cell" style="padding-left: 37%; padding-top: .5em;"><span>Что ищем?</span>
+                                <div id="SelectSearchType" style="float: right; margin-top: .25em;"></div></div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="cell search-letters">                                
+                                <span>А</span><span>Б</span><span>В</span><span>Г</span><span>Д</span><span>Е</span><span>Ё</span><span>Ж</span><span>З</span><span>И</span><span>Й</span><span>К</span><span>Л</span><span>М</span><span>Н</span><span>О</span><span>П</span><span>Р</span><span>С</span><span>Т</span><span>У</span><span>Ф</span><span>Х</span><span>Ц</span><span>Ч</span><span>Ш</span><span>Щ</span><span>Ъ</span><span>Ы</span><span>Ь</span><span>Э</span><span>Ю</span><span>Я</span>
+                            </div>                            
+                        </div>
+
+                        <div class="row ">
+                            <div class="cell search-letters">
+                                <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="cell search-letters">
+                                <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>                                
+                            </div>                            
+                        </div>                        
+                    </div>                    
+
+                    <br />
+                    <hr />
+
+                    <div class="search-bottom-area">
+
+                        <div class="mode-swicher">
+                            <ul>
+                                <li><span  onclick="MusicApplication.getCategoryLayout()"><i class="fa fa-home" title="Home"></i></span></li>
+                                <li><span  onclick="MusicApplication.getNonStopLayout()"><i class="fa fa-random" title="Random music"></i> Музыка Non-Stop</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="search-textbox-area">                        
+                            <div id="SearchTextBox"></div>                       
+                        </div>                        
+                    </div>                    
+
+                </div>                                          
+
+                <div id=contentArea>                    
+                    <div id="mainContent">
+                        <?= $this->content ?>                                        
+                    </div>                    
+                </div>
+                <?= $this->inlineScript() ?>                
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<script>
+    if (!MusicApplication.nonStopModule) {
+        MusicApplication.nonStopModule = new nonStopModule();
+    }
+</script>
+
+<div class="non-stop-title">
+    <div class="main-message">Выбери стили и направления для прослушивания музыки online</div>
+    <div class="main-message">Для начала прослушивания нажми кнопку "Музыка ONLINE"</div>    
+    <div class="foot-message">Если ничего не отмечено выборка файлов будет производится по всему каталогу</div>
+</div>
+
+<div>
+    <?php foreach ($groups as $group): ?>
+        <div class="category-check">
+            <div id="category<?= $this->escapeHtml($group->getId()); ?>"></div>    
+        </div>    
+        <script>
+            (function () {
+                var _thisItem = MusicApplication.nonStopModule.selectedGroups.find(function (_item) {
+                    return _item.id === <?= $this->escapeHtml($group->getId()); ?>;
+                });
+
+                $('#category<?= $this->escapeHtml($group->getId()); ?>').dxCheckBox({
+                    text: '<?= $this->escapeHtml($group->getName()); ?>',
+                    value: (_thisItem ? _thisItem.checked : false),
+                    onValueChanged: function (e) {
+                        var _groupItem = MusicApplication.nonStopModule.selectedGroups.find(function (_item) {
+                            return _item.id === <?= $this->escapeHtml($group->getId()); ?>;
+                        });
+                        if (_groupItem)
+                            _groupItem.checked = e.value;
+                    }
+                });
+
+                if (!_thisItem) {
+                    MusicApplication.nonStopModule.selectedGroups.push({
+                        id: <?= $this->escapeHtml($group->getId()); ?>,
+                        checked: false
+                    });
+                }
+            })();
+        </script>
+    <?php endforeach; ?>
+</div>
+
+<div class="start-area">    
+    <span class="start-button" onclick="MusicApplication.nonStopModule.start(this);">start</span>    
+</div>
+
+<script>
+    $(function () {
+        MusicApplication.page = 'nonstop';
+        if(MusicApplication.playListControl.option('selectedItems').length > 0)
+            $('.start-area .start-button').text('Ещё');
+        else
+            $('.start-area .start-button').text('Start');
+    });
+</script>

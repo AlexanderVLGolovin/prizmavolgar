@@ -1,0 +1,14 @@
+{
+  "name": "prizmavolgar_zf__v2020",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "developer",
+  "contributors": [],
+  "dependencies": {}
+}

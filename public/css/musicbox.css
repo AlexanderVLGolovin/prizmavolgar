@@ -1,0 +1,454 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02.12.2018, 22:50:38
+    Author     : Developer
+*/
+/*variables*/
+.music-module {
+  /*Player style*/
+}
+.music-module .ellipsis-one-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: calc(100%);
+}
+.music-module .disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+.music-module .u-right {
+  float: right;
+}
+.music-module .u-hidden {
+  display: none;
+  visibility: hidden;
+}
+.music-module .u-pointer {
+  cursor: pointer;
+}
+.music-module .u-nowrap {
+  white-space: nowrap;
+}
+.music-module .u-floatRight {
+  float: right;
+}
+.music-module .search-bottom-area {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+.music-module .search-bottom-area .search-textbox-area {
+  width: 400px;
+  position: relative;
+  display: inline-block;
+  top: -21px;
+  left: 54px;
+}
+.music-module .search-bottom-area .search-textbox-area #SearchTextBox {
+  width: 400px !important;
+}
+.music-module .search-bottom-area .mode-swicher {
+  position: relative;
+  display: inline-block;
+  line-height: 1em;
+  list-style: none;
+  padding: 2px;
+  margin-left: 10px;
+  top: -32px;
+}
+.music-module .search-bottom-area .mode-swicher li {
+  cursor: pointer;
+  display: inline-block;
+}
+.music-module .search-bottom-area .mode-swicher li span {
+  padding: .5em;
+  background-color: #FFc100;
+  border-radius: 4px;
+  margin: 0 1px 1px 0;
+  border: 1px solid lightgray;
+}
+.music-module .search-bottom-area .mode-swicher li span:active {
+  margin: 1px 0 0 1px;
+}
+.music-module div.main-page {
+  width: 100%;
+}
+.music-module div.content {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2em;
+}
+.music-module div.header {
+  display: block;
+  height: 210px;
+  background-image: url(/img/music/searchpanel.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 900px 210px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.music-module div.header div.search-block {
+  display: table;
+  width: 100%;
+  color: floralwhite;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
+  text-shadow: 2px 3px 2px black, 0 0 2px black;
+  font-size: 1.25rem;
+  /*        .dx-texteditor-input {
+                        font-size: 1.25rem;
+                        
+                    }*/
+}
+.music-module div.header div.search-block div.row {
+  display: table-row;
+}
+.music-module div.header div.search-block div.row div.cell {
+  display: table-cell;
+  padding: 0 1em;
+}
+.music-module div.header div.search-block div.row div.cell .dx-widget {
+  color: floralwhite;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-shadow: 2px 3px 2px black, 0 0 2px black;
+}
+.music-module div.header div.search-block div.row div.cell.search-letters {
+  text-align: center;
+  font-size: 1.25rem;
+}
+.music-module div.header div.search-block div.row div.cell.search-letters span {
+  padding: 0 .25em;
+  cursor: pointer;
+  color: floralwhite;
+}
+.music-module .category-container {
+  display: block;
+  margin: .5em 0;
+}
+.music-module .category-container .category-item {
+  display: inline-block;
+  width: 296px;
+  min-height: calc(2em - 4px);
+  margin: .5em 0;
+  vertical-align: top;
+}
+.music-module .category-container .category-item a {
+  background-color: #027fb8;
+  color: #c8e5bc;
+  font-size: 1.25rem;
+  padding: 1em;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: calc(100%-1em);
+  margin: 0 1px 1px 0;
+}
+.music-module .category-container .category-item a:active {
+  margin: 1px 0 0 1px;
+}
+.music-module footer {
+  font-family: Arial;
+  text-align: right;
+  padding: .5em 1em;
+  color: gray;
+  font-size: .75em;
+  border-top: 1px solid gray;
+  line-height: 1em;
+}
+.music-module div.player-area {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.music-module div.player-area div#player {
+  display: table;
+  width: 900px;
+  height: 250px;
+  border: 1px gray solid;
+  background-color: #e2e2e2;
+  background-image: url(/img/music/tape-background.jpg);
+  background-repeat: no-repeat;
+}
+.music-module div.player-area div#player div#leftBlock {
+  display: table-cell;
+  width: 40%;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock {
+  height: 205px;
+  border: 2px outset #d2d2d2;
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: calc(100% - 20px);
+  background-image: url(/img/music/cassete.png);
+  background-position-x: center;
+  background-position-y: 2px;
+  background-repeat: no-repeat;
+  background-color: #bfbfbf;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock div.cassete-rotor {
+  position: relative;
+  height: 38px;
+  width: 38px;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock div.cassete-rotor.left {
+  top: 73px;
+  left: 85px;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock div.cassete-rotor.right {
+  top: 73px;
+  left: -85px;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock .cover {
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock .cover .cover-glass {
+  height: 156px;
+  background-color: lightcyan;
+  opacity: .5;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock .cover .cover-bottom {
+  background-image: url(/img/music/tape-background.jpg);
+  height: 38px;
+  padding: .5em 0 0 .5em;
+  border-top: 2px outset #d2d2d2;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock .cover .cover-bottom span.label {
+  font-weight: 900;
+  color: #8c8c8c;
+}
+.music-module div.player-area div#player div#leftBlock div#casetteBlock .cover .cover-bottom span.label span.family {
+  font-size: .75em;
+}
+.music-module div.player-area div#player div#leftBlock div#controlsBlock {
+  display: table;
+  height: 30px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.music-module div.player-area div#player div#leftBlock div#controlsBlock div.control-button {
+  display: table-cell;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  border-width: 1px;
+  border-style: outset;
+  border-color: gray;
+  width: auto;
+  background: linear-gradient(to bottom, #f2f2f2, #b2b2b2);
+}
+.music-module div.player-area div#player div#leftBlock div#controlsBlock div.control-button .fa {
+  margin: 0 1px 1px 0;
+}
+.music-module div.player-area div#player div#leftBlock div#controlsBlock div.control-button:active {
+  border-style: inset;
+}
+.music-module div.player-area div#player div#leftBlock div#controlsBlock div.control-button:active .fa {
+  margin: 1px 0 0 1px;
+}
+.music-module div.player-area div#player div#rightBlock {
+  display: table-cell;
+  width: 60%;
+  padding: 10px;
+  vertical-align: top;
+}
+.music-module div.player-area div#player div#rightBlock div.top-row {
+  width: 100%;
+  display: block;
+}
+.music-module div.player-area div#player div#rightBlock div.top-row div.indicator-area {
+  display: block;
+  vertical-align: top;
+  float: right;
+}
+.music-module div.player-area div#player div#rightBlock div.top-row div.indicator-area div.indicator-block {
+  width: 100%;
+  display: block;
+}
+.music-module div.player-area div#player div#rightBlock div.top-row div.indicator-area div.indicator-block div.indicator {
+  display: inline-block;
+  height: 105px;
+  vertical-align: top;
+  background-color: #fff;
+  border: 2px outset #d2d2d2;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-top: 10px;
+  background-image: url(/img/music/indicator.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: -24px;
+  background-size: cover;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row {
+  height: 130px;
+  width: 100%;
+  display: table;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area {
+  display: table-cell;
+  width: 180px;
+  padding: 10px;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display {
+  background-color: #081623;
+  border: 2px outset #081623;
+  border-radius: 4px;
+  font-family: 'dotf';
+  color: #26e9ce;
+  font-size: .9em;
+  padding: .5em .25em;
+  overflow: hidden;
+  height: 100px;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.counter-area {
+  font-size: .9em;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.counter-area span.mode-disp {
+  color: greenyellow;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.counter-area span.timer-disp {
+  float: right;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.song-area {
+  font-size: .6em;
+  line-height: 1.5em;
+  display: table;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.song-area .row {
+  display: table-row;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.song-area .row .cell {
+  display: table-cell;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.song-area .row .cell:first-child {
+  color: greenyellow;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.display-area div.display div.song-area .row .cell:last-child {
+  width: 100%;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.volumeArea {
+  display: table-cell;
+  width: 2em;
+  padding-top: 10px;
+  text-align: center;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.volumeArea .fa {
+  width: 100%;
+  margin: 0 1px 1px 0;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.volumeArea .fa:active {
+  margin: 1px 0 0 1px;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.volumeArea .repeat-playlist.active {
+  color: green;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea {
+  display: table-cell;
+  width: calc(100% - 2em - 180px);
+  padding-top: 10px;
+  vertical-align: top;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control {
+  background-color: #081623;
+  border: 2px outset #081623;
+  border-radius: 4px;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item {
+  border-top: none;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item.dx-state-hover {
+  background-color: #005951;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item.dx-list-item-selected {
+  background-color: #005951;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item.dx-list-item-selected .dx-list-item-content {
+  color: greenyellow;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item-content,
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list .dx-empty-message {
+  padding: 2px 4px;
+  font-size: .65em;
+  line-height: 1.25;
+  font-family: 'dotf';
+  color: #26e9ce;
+  display: flex;
+  flex-direction: row;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item-content .song-title,
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list .dx-empty-message .song-title {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list-item-content .fa,
+.music-module div.player-area div#player div#rightBlock div.bottom-row div.playListArea .play-list-control .dx-list .dx-empty-message .fa {
+  font-size: 1.25em;
+}
+.music-module div.non-stop-title {
+  text-align: center;
+}
+.music-module div.non-stop-title div.main-message {
+  color: #027fb8;
+  font-size: 1.5em;
+}
+.music-module div.non-stop-title div.foot-message {
+  color: darkorange;
+  font-size: 1.25em;
+}
+.music-module div.category-check {
+  display: inline;
+}
+.music-module div.category-check div.dx-checkbox {
+  margin: 15px 10px;
+}
+.music-module div.category-check div.dx-checkbox .dx-checkbox-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+}
+.music-module div.start-area {
+  text-align: center;
+  margin: 10px;
+}
+.music-module div.start-area .start-button {
+  color: #8a551e;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+  line-height: 95px;
+  cursor: pointer;
+  background: radial-gradient(#f0f0f0 0%, #fbc726 80%, #f0f0f0 90%);
+}
+.music-module div.start-area .start-button:active {
+  background: radial-gradient(#f0f0f0 0%, #fbc726 60%, #f0f0f0 90%);
+}
+.music-module div.list-load-begunok {
+  position: absolute;
+  opacity: .5;
+}
+.music-module .dx-datagrid .fa:active {
+  color: green;
+}
+/*# sourceMappingURL=musicbox.css.map */
